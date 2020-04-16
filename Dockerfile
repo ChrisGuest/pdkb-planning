@@ -29,7 +29,7 @@ RUN git clone https://github.com/ChrisGuest/pdkb-planning.git
 WORKDIR /MEP/pdkb-planning
 RUN python3 setup.py install
 
-WORKDIR /MEP
+# WORKDIR /MEP
 
 # default command to execute when container starts
 CMD /bin/bash
