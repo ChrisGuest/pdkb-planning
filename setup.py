@@ -7,7 +7,7 @@ setup(name = 'PDKB Planning Library',
       description = 'Library for dealing with PDKBs; in particular for automated planning compilations.',
       author = 'Christian Muise',
       author_email = 'christian.muise@gmail.com',
-      url = 'https://github.com/QuMuLab/pdkb-planning',
+      url = 'https://github.com/ChrisGuest/pdkb-planning',
       packages = find_packages(),
      )
 
