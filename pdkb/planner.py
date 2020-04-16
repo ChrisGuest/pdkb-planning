@@ -2,8 +2,8 @@
 import os, sys, time, pickle
 
 
-from .actions import *
-from .problems import *
+from pdkb.actions import *
+from pdkb.problems import *
 
 def cleanup():
     os.system('rm -f pdkb-domain.pddl')
