@@ -327,8 +327,12 @@ class ValidGeneration(Problem):
                     MEMLIMIT = "2000000",
                     TIMELIMIT = "1800")
         os.system("cat pdkb-plan.out")
-        self.plan = parse_output_ipc('pdkb-plan.txt')
-
+        try:
+            self.plan = parse_output_ipc('pdkb-plan.txt')
+        except FileNotFoundError:
+            print('pdkb-plan.txt not found')
+            print('pdkb-plan.out:')
+            print('\n'.join(read_file('pdkb-plan.out')))
 
     def output_solution(self):
         print("\n  --{ Plan }--\n")
@@ -490,6 +494,7 @@ class Domain:
         PROPS = pdkb.all_rmls | akpdkb.all_rmls
         assert 0 == len(pdkb.all_rmls & akpdkb.all_rmls), "Error: Detected overlap in regular fluents and always known fluents"
 
+        print("DEBUG MODE")
         print("\n\n# Agents: %d" % len(self.agents))
         print("# Props: %d" % len(PROPS))
         print("# Acts: %d" % len(self.actions))
