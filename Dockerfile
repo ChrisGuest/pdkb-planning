@@ -25,7 +25,7 @@ RUN yes | pip3 install scipy
 # Get the PDKB library
 RUN mkdir /MEP
 WORKDIR /MEP
-RUN git clone https://github.com/ChrisGuest/pdkb-planning.git
+RUN git clone -b debug https://github.com/ChrisGuest/pdkb-planning.git
 WORKDIR /MEP/pdkb-planning
 RUN python3 setup.py install
 
