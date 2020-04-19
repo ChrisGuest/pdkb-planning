@@ -322,10 +322,13 @@ class ValidGeneration(Problem):
                     MEMLIMIT = "2000000",
                     TIMELIMIT = "1800")
 
-        print("%s/planners/%s --domain pdkb-domain.pddl --problem pdkb-problem.pddl --output pdkb-plan.txt" % (planner_path, chosen_planner),
-                    output_file = 'pdkb-plan.out',
-                    MEMLIMIT = "2000000",
-                    TIMELIMIT = "1800")
+        print("""
+            %s/planners/%s --domain pdkb-domain.pddl --problem pdkb-problem.pddl --output pdkb-plan.txt
+                    output_file = 'pdkb-plan.out'
+                    MEMLIMIT = "2000000"
+                    TIMELIMIT = "1800"
+            """ % (planner_path, chosen_planner))
+
         os.system("cat pdkb-plan.out")
         try:
             self.plan = parse_output_ipc('pdkb-plan.txt')
